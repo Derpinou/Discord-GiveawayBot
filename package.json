@@ -1,0 +1,24 @@
+{
+  "name": "GiveawayBot",
+  "version": "0.0.1",
+  "description": "A giveawayBot",
+  "author": "Derpinou",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "discord-giveaways": "^4.1.1",
+    "discord.js": "^12.2.0",
+    "fs": "^0.0.1-security",
+    "klaw": "^3.0.0",
+    "moment": "^2.26.0",
+    "ms": "^2.1.2",
+    "path": "^0.12.7",
+    "util": "^0.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "GNU"
+}
