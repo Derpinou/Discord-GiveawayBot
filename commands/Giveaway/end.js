@@ -1,21 +1,15 @@
 const Command = require("../../base/Command.js")
 
-class End extends Command {
-
+module.exports = class End extends Command {
     constructor (client) {
         super(client, {
             name: "end",
             description: "Terminez un Giveaway",
-            usage: `end [MessageId]`,
-            enabled: true,
-            aliases: [],
-            permission: "MANAGE_GUILD",
-            botpermissions: [ "SEND_MESSAGES" ],
-            examples: "$end 716590214642139186",
+            examples: '$end 743576541447061605',
+            usage: '$end [ID]',
             owner: false
         });
     }
-
     async run (message, args) {
         if(!args[0]) this.client.errors.utilisation(message, this.client);
         await message.delete()
@@ -26,6 +20,4 @@ class End extends Command {
             message.channel.send(`Je n'arrive pas a trouver le giveaway avec l'id \`${messageID}\``);
         });
     }
-
 }
-module.exports = End;

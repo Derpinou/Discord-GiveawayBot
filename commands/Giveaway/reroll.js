@@ -1,22 +1,15 @@
 const Command = require("../../base/Command.js")
-const ms = require('ms')
 
-class Reroll extends Command {
-
+module.exports = class Reroll extends Command {
     constructor (client) {
         super(client, {
             name: "reroll",
             description: "Tire nouveau gagnant lorsque le giveaway est terminé",
-            usage: `reroll [MessageId]`,
-            enabled: true,
-            aliases: [],
-            permission: "MANAGE_GUILD",
-            botpermissions: ["SEND_MESSAGES"],
-            examples: "$reroll 716590214642139186",
+            examples: '$reroll 743576541447061605',
+            usage: '$reroll [ID]',
             owner: false
         });
     }
-
     async run (message, args) {
         if(!args[0]) return this.client.errors.utilisation(message, this.client);
         await message.delete()
@@ -29,7 +22,7 @@ class Reroll extends Command {
     }
 }
 
-module.exports = Reroll;
+
 
 
 

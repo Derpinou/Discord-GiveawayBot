@@ -3,7 +3,6 @@ let config = require('../config');
 
 module.exports.utilisation = (message, client) => {
 
-    if(!message) return client.logger.log('Manque argument message !', "error");
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 
     const command = args.shift().toLowerCase();
