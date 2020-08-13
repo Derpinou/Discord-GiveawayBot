@@ -1,23 +1,17 @@
-const Command = require("../../base/Command.js")
-const ms = require('ms')
-const Discord= require('discord.js')
+const Command = require("../../base/Command.js"),
+    ms = require('ms'),
+    {MessageEmbed} = require('discord.js');
 
-class Edit extends Command {
-
+module.exports = class Edit extends Command {
     constructor (client) {
         super(client, {
             name: "edit",
             description: "ajoutez du temps, modifiez le nombre de gagnants et le prix",
-            usage: `edit [MessageId]`,
-            enabled: true,
-            aliases: [],
-            permission: "MANAGE_GUILD",
-            botpermissions: [ "SEND_MESSAGES" ],
-            examples: "$edit 716590214642139186",
+            examples: '$edit 743576541447061605 2d 2w Nitro Game',
+            usage: '$edit [ID] [Temps] [[Nombre de gagnants] ] [Prix]',
             owner: false
         });
     }
-
     async run (message, args) {
         if (!args[0] || !args[1] ||!args[2] ||!args[3]) return this.client.errors.utilisation(message, this.client);
         let messageID = args[0];
@@ -26,7 +20,7 @@ class Edit extends Command {
             newPrize: args.slice(3).join(" "),
             addTime: ms(args[1]),
         }).then(() => {
-            message.channel.send(new Discord.MessageEmbed()
+            message.channel.send(new MessageEmbed()
                 .setColor(this.client.config.embed.color)
                 .setFooter(this.client.config.embed.footer, this.client.user.displayAvatarURL())
                 .setAuthor('Giveaway')
@@ -40,6 +34,4 @@ class Edit extends Command {
             console.log(err)
         });
     }
-
 }
-module.exports = Edit;

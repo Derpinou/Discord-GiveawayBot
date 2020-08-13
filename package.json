@@ -1,16 +1,12 @@
 {
-  "name": "GiveawayBot",
-  "version": "0.0.1",
-  "description": "A giveawayBot",
-  "author": "Derpinou",
+  "name": "djs-giveawaybot",
+  "version": "2.0.0",
+  "description": "Template pour bot discord, utilise discord.js et discord-giveaway",
   "main": "index.js",
   "dependencies": {
-    "chalk": "^4.0.0",
-    "discord-giveaways": "^4.1.1",
+    "discord-giveaways": "^4.2.1",
     "discord.js": "^12.2.0",
-    "fs": "^0.0.1-security",
-    "klaw": "^3.0.0",
-    "moment": "^2.26.0",
+    "fs": "0.0.1-security",
     "ms": "^2.1.2",
     "path": "^0.12.7",
     "util": "^0.12.3"
@@ -19,6 +15,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "license": "GNU"
+  "author": "Derpinou",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derpinou/Discord-GiveawayBot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Derpinou/Discord-GiveawayBot/issues"
+  },
+  "homepage": "https://github.com/Derpinou/Discord-GiveawayBot#readme"
 }

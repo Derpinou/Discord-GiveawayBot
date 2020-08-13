@@ -1,26 +1,20 @@
-const Command = require("../../base/Command.js")
-const ms = require('ms')
+const Command = require("../../base/Command.js"),
+    ms = require('ms')
 
-class Create extends Command {
-
+module.exports = class Create extends Command {
     constructor (client) {
         super(client, {
             name: "create",
             description: "Créez un giveaway",
-            usage: `create [Durée] [Nombre de gagnants] [Prix]`,
-            enabled: true,
-            aliases: [],
-            permission: "MANAGE_GUILD",
-            botpermissions: [ "SEND_MESSAGES" ],
-            examples: "$create 1d 1w Nitro classic 1 month\n$create 2h 2w Role Perso",
+            examples: '$create 1d 1w Nitro',
+            usage: '$create [temps] [Nombre de gagnants] [Prix]',
             owner: false
         });
     }
-
     async run (message, args) {
         if (!args[0] || !args[1] ||!args[2]) return this.client.errors.utilisation(message, this.client);
         await message.delete()
-        this.client.gv.start(message.channel, {
+        await this.client.gv.start(message.channel, {
             time: ms(args[0]),
             prize: args.slice(2).join(" "),
             winnerCount: parseInt(args[1]),
@@ -47,6 +41,6 @@ class Create extends Command {
         });
     }
 }
-module.exports = Create;
+
 
 
