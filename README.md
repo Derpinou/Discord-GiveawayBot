@@ -16,8 +16,8 @@
 >* `owner` doit être l'**id** de votre compte.
 >* `token` doit être le **token** du bot.
 >* `prefix` doit être le **prefix** du bot.
->* `games` Le jeux de votre bot
->* `status` le status de votre bot.
+
+
 
 ## Fonctionnement
 
